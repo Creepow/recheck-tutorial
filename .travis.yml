@@ -3,7 +3,6 @@ dist: trusty
 
 addons:
   chrome: stable
-  firefox: stable
   apt:
     packages:
       - chromium-chromedriver
@@ -18,16 +17,9 @@ cache:
 install: true
 
 before_script:
-  - GECKODRIVER_VERSION="v0.24.0"
-  - GECKODRIVER_HASH="7552b85e43973c84763e212af7cca566"
-
   # include ChromeDriver in PATH
   - ln --symbolic /usr/lib/chromium-browser/chromedriver "${HOME}/bin/chromedriver"
   # start Chrome and listen on localhost
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
-  # include GeckoDriver in PATH
-  - wget --quiet https://github.com/mozilla/geckodriver/releases/download/${GECKODRIVER_VERSION}/geckodriver-${GECKODRIVER_VERSION}-linux64.tar.gz
-  - echo ${GECKODRIVER_HASH} "geckodriver-${GECKODRIVER_VERSION}-linux64.tar.gz" | md5sum --check -
-  - tar xf "geckodriver-${GECKODRIVER_VERSION}-linux64.tar.gz" -C ${HOME}/bin/
 
 script: mvn clean verify
