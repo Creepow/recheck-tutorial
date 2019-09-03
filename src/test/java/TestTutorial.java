@@ -22,7 +22,7 @@ public class TestTutorial {
 		re = new RecheckImpl(RecheckOptions.builder().reportUploadEnabled(true).build());
 
 		ChromeOptions options = new ChromeOptions();
-//		options.addArguments("--headless");
+		options.addArguments("--headless");
 
 		driver = new ChromeDriver(options);
 	}
