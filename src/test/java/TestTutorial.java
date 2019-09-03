@@ -3,6 +3,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import de.retest.recheck.Recheck;
 import de.retest.recheck.RecheckImpl;
@@ -15,6 +16,10 @@ public class TestTutorial {
 	@Before
 	public void setUp() {
 		re = new RecheckImpl();
+
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--headless");
+
 		driver = new ChromeDriver();
 	}
 
