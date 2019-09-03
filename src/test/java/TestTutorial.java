@@ -15,13 +15,14 @@ public class TestTutorial {
 
 	@Before
 	public void setUp() {
+		System.setProperty(de.retest.recheck.Properties.REHUB_REPORT_UPLOAD_ENABLED, "true");
+
 		re = new RecheckImpl();
 
 		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--headless");
+//		options.addArguments("--headless");
 
 		driver = new ChromeDriver(options);
-		System.setProperty( de.retest.recheck.Properties.REHUB_REPORT_UPLOAD_ENABLED, "true" );
 	}
 
 	@Test
