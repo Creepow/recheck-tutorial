@@ -18,8 +18,8 @@ cache:
 install: true
 
 before_script:
-  GECKODRIVER_VERSION="v0.24.0"
-  GECKODRIVER_HASH="7552b85e43973c84763e212af7cca566"
+  - GECKODRIVER_VERSION="v0.24.0"
+  - GECKODRIVER_HASH="7552b85e43973c84763e212af7cca566"
 
   # include ChromeDriver in PATH
   - ln --symbolic /usr/lib/chromium-browser/chromedriver "${HOME}/bin/chromedriver"
