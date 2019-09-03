@@ -1,11 +1,11 @@
-import static org.junit.Assert.*;
-
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
-import org.junit.*;
-import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.*;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
-import de.retest.recheck.*;
+import de.retest.recheck.Recheck;
+import de.retest.recheck.RecheckImpl;
 
 public class TestTutorial {
 
