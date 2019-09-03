@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import de.retest.recheck.Recheck;
 import de.retest.recheck.RecheckImpl;
+import de.retest.recheck.RecheckOptions;
 
 public class TestTutorial {
 
@@ -15,9 +16,7 @@ public class TestTutorial {
 
 	@Before
 	public void setUp() {
-		System.setProperty(de.retest.recheck.Properties.REHUB_REPORT_UPLOAD_ENABLED, "true");
-
-		re = new RecheckImpl();
+		re = new RecheckImpl(RecheckOptions.builder().reportUploadEnabled(true).build());
 
 		ChromeOptions options = new ChromeOptions();
 //		options.addArguments("--headless");
