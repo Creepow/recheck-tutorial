@@ -9,6 +9,7 @@
 // https://retest.github.io/docs/recheck/how-ignore-works-in-recheck/
 
 var fontFamilies = [ [ "system-ui", "Arial" ], [ "-apple-system", "sans-serif" ] ];
+var baseUrl = /http[s]?:\/\/[\w.:\d\-]*/;
 
 function matches(element, diff) {
     if (diff.key == "font-family") {
@@ -18,20 +19,10 @@ function matches(element, diff) {
             }
         }
     }
-    return false;
-}
-
-function matches(element, diff) {
-    if (diff.key == "opacity") {
+	if (diff.key == "opacity") {
         return (Math.abs(diff.expected - diff.actual) <= 10);
     }
-    return false;
-}
-
-var baseUrl = /http[s]?:\/\/[\w.:\d\-]*/;
-
-function matches(element, diff) {
-    if (diff.expected != null && diff.actual != null) {
+	if (diff.expected != null && diff.actual != null) {
         cleanExpected = diff.expected.replace(baseUrl, '');
         cleanActual = diff.actual.replace(baseUrl, '');
         return cleanExpected === cleanActual;
