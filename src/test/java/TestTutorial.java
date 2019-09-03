@@ -15,7 +15,6 @@ public class TestTutorial {
 	@Before
 	public void setUp() {
 		re = new RecheckImpl();
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pascal Allion\\eclipse-workspace\\recheck-tutorial\\chromedriver.exe");
 		driver = new ChromeDriver();
 	}
 
