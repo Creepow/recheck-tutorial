@@ -23,6 +23,7 @@ public class TestTutorial {
 																							// rehub
 
 		ChromeOptions options = new ChromeOptions();
+
 		options.addArguments("--headless"); // run Chrome headless for Travis
 		options.addArguments("--window-size=1280,720"); // common window size
 		options.addArguments("--lang=en"); // language english
@@ -34,7 +35,7 @@ public class TestTutorial {
 	public void google() throws Exception {
 		re.startTest();
 
-		System.out.println(getToken()); // get the RECHECK_API_KEY
+		// System.out.println(getToken()); // get the RECHECK_API_KEY
 
 		driver.get("http://google.com");
 		re.check(driver, "open");
