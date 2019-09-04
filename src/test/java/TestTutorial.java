@@ -23,9 +23,9 @@ public class TestTutorial {
 																							// rehub
 
 		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--headless", "--window-size=1280,720", "--lang=en"); // run Chrome headless, at a certain
-																					// window size and in english for
-																					// Travis
+		options.addArguments("--headless"); // run Chrome headless for Travis
+		options.addArguments("--window-size=1280,720"); // common window size
+		options.addArguments("--lang=en"); // language english
 
 		driver = new ChromeDriver(options);
 	}
