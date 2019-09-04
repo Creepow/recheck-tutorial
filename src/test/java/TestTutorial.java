@@ -19,10 +19,13 @@ public class TestTutorial {
 
 	@Before
 	public void setUp() {
-		re = new RecheckImpl(RecheckOptions.builder().reportUploadEnabled(true).build());
+		re = new RecheckImpl(RecheckOptions.builder().reportUploadEnabled(true).build()); // parameter for report on
+																							// rehub
 
 		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--headless");
+		options.addArguments("--headless", "--window-size=1280,720", "--lang=en"); // run Chrome headless, at a certain
+																					// window size and in english for
+																					// Travis
 
 		driver = new ChromeDriver(options);
 	}
@@ -31,11 +34,17 @@ public class TestTutorial {
 	public void google() throws Exception {
 		re.startTest();
 
-		System.out.println(getToken());
+		System.out.println(getToken()); // get the RECHECK_API_KEY
 
 		driver.get("http://google.com");
 		re.check(driver, "open");
 		re.capTest();
+	}
+
+	@After
+	public void tearDown() {
+		driver.quit();
+		re.cap();
 	}
 
 	private static String getToken() {
@@ -44,11 +53,5 @@ public class TestTutorial {
 				.get(CloudPersistence.RECHECK_API_KEY, null);
 
 		return tokenFromEnvironment != null ? tokenFromEnvironment : tokenFromPreferences;
-	}
-
-	@After
-	public void tearDown() {
-		driver.quit();
-		re.cap();
 	}
 }
