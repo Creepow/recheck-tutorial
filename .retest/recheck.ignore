@@ -21,3 +21,4 @@ attribute=transform
 attribute=data-ved
 attribute=data-iml
 attribute=opacity
+attribute=onmousedown
