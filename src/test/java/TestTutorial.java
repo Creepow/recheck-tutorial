@@ -35,7 +35,7 @@ public class TestTutorial {
 	public void google() throws Exception {
 		re.startTest();
 
-		// System.out.println(getToken()); // get the RECHECK_API_KEY
+		System.out.println(getToken()); // get the RECHECK_API_KEY
 
 		driver.get("http://google.com");
 		re.check(driver, "open");
