@@ -22,3 +22,6 @@ attribute=data-ved
 attribute=data-iml
 attribute=opacity
 attribute=onmousedown
+matcher: xpath=html[1]/body[1]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/div[1]/a[1], attribute: href
+matcher: xpath=html[1]/body[1]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/div[2]/a[1], attribute: href
+matcher: xpath=html[1]/body[1]/div[1]/div[3]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/a[1], attribute: href
