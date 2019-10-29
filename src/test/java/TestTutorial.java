@@ -25,7 +25,7 @@ public class TestTutorial {
 	public void google() throws Exception {
 		re.startTest();
 
-		driver.get( "http://google.com" );
+		driver.get( "https://docs.retest.de/" );
 		re.check( driver, "open" );
 		re.capTest();
 	}
