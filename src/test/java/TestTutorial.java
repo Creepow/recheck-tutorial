@@ -15,19 +15,18 @@ public class TestTutorial {
 
 	@Before
 	public void setUp() {
-		re = new RecheckImpl(RecheckOptions.builder().enableReportUpload().build());// parameter for report on
-																					// rehub
+		re = new RecheckImpl( RecheckOptions.builder().enableReportUpload().build() );
 		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--headless", "--window-size=1280,720");
-		driver = new ChromeDriver(options);
+		options.addArguments( "--headless", "--window-size=1280,720" );
+		driver = new ChromeDriver( options );
 	}
 
 	@Test
 	public void google() throws Exception {
 		re.startTest();
 
-		driver.get("http://google.com");
-		re.check(driver, "open");
+		driver.get( "http://google.com" );
+		re.check( driver, "open" );
 		re.capTest();
 	}
 
